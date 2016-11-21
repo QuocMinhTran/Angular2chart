@@ -1,0 +1,77 @@
+<h1>Tool</h1>
+<table class="table">
+    <tr>
+        <td>
+            <h2>Node</h2>
+            <table class="table">
+                <tr>
+                    <td></td>
+                    <td><label for="node-id">Id</label></td>
+                    <td><input id="node-id" class="form-control" type="text" value="6"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><label for="node-label">Label</label></td>
+                    <td><input id="node-label" class="form-control" type="text" value="Node 6"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><label for="node-shape">Shape</label></td>
+                    <td><select id="node-shape" class="form-control" type="text" value="dot">
+                            <option>dot</option>
+                            <option>diamond</option>
+                            <option>square</option>
+                            <option>triangle</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Action</td>
+                    <td>
+                        <div class="popup">
+                            <button id="node-add" class="btn btn-default" (click)="addNode();">Add</button>
+                            <span class="popuptext" id="myPopup">Please fill in the blank</span>
+                        </div>
+                        <button id="node-update" class="btn btn-default" (click)="updateNode();">Update</button>
+                        <button id="node-remove" class="btn btn-default" (click)="removeNode();">Remove</button>
+                    </td>
+                </tr>
+            </table>
+        </td>
+        <td>
+            <h2>Edge</h2>
+            <table class="table">
+                <tr>
+                    <td></td>
+                    <td><label for="edge-id">Id</label></td>
+                    <td><input id="edge-id" class="form-control" type="text" value="5"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><label for="edge-from">From</label></td>
+                    <td><input id="edge-from" class="form-control" type="text" value="3"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><label for="edge-to">To</label></td>
+                    <td><input id="edge-to" class="form-control" type="text" value="4"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Action</td>
+                    <td>
+                        <button id="edge-add" class="btn btn-default" (click)="addEdge();">Add</button>
+                        <button id="edge-update" class="btn btn-default" (click)="updateEdge();">Update</button>
+                        <button id="edge-remove" class="btn btn-default" (click)="removeEdge();">Remove</button>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+
+</table>
+<div id="mynetwork" style="width:100%;height:550px;border: 5px double black;
+    border-radius: 10px;">
+    
+</div>

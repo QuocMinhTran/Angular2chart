@@ -1,0 +1,127 @@
+[
+  {
+    "ID": 1,
+    "NAME": "pc1.CPU",
+    "MAXTASKTIME": 0.000002000000000279556
+  },
+  {
+    "ID": 2,
+    "NAME": "PC2.CPU",
+    "MAXTASKTIME": 0.000002000000000279556
+  },
+  {
+    "ID": 3,
+    "NAME": "pc1.Port1.EI",
+    "MAXTASKTIME": 0.000023680000000025903
+  },
+  {
+    "ID": 4,
+    "NAME": "SW1.Port1.II",
+    "MAXTASKTIME": 0.000023680000000025903
+  },
+  {
+    "ID": 5,
+    "NAME": "SW1.Port2.EI",
+    "MAXTASKTIME": 0.000023680000000025903
+  },
+  {
+    "ID": 6,
+    "NAME": "PC2.Port1.II",
+    "MAXTASKTIME": 0.000023680000000025903
+  },
+  {
+    "ID": 7,
+    "NAME": "PC2.Port4.EI",
+    "MAXTASKTIME": 0.0013760000000000439
+  },
+  {
+    "ID": 8,
+    "NAME": "burk",
+    "MAXTASKTIME": 0.0013760000000000439
+  },
+  {
+    "ID": 9,
+    "NAME": "pc1.Port3.II",
+    "MAXTASKTIME": 0.0013760000000000439
+  },
+  {
+    "ID": 10,
+    "NAME": "PC3.Port4.II",
+    "MAXTASKTIME": 0.0013760000000000439
+  },
+  {
+    "ID": 11,
+    "NAME": "PC3.CPU",
+    "MAXTASKTIME": 0.000002000000000279556
+  },
+  {
+    "ID": 12,
+    "NAME": "cam1.CPU",
+    "MAXTASKTIME": 0.000002000000000279556
+  },
+  {
+    "ID": 13,
+    "NAME": "cam1.Port1.EI",
+    "MAXTASKTIME": 0.00012080000000003199
+  },
+  {
+    "ID": 14,
+    "NAME": "SW1.Port3.II",
+    "MAXTASKTIME": 0.00012080000000003199
+  },
+  {
+    "ID": 15,
+    "NAME": "SW1.Port1.EI",
+    "MAXTASKTIME": 0.00012080000000003199
+  },
+  {
+    "ID": 16,
+    "NAME": "pc1.Port1.II",
+    "MAXTASKTIME": 0.00012080000000003199
+  },
+  {
+    "ID": 17,
+    "NAME": "PC3.Port2.EI",
+    "MAXTASKTIME": 0.010000000000000009
+  },
+  {
+    "ID": 18,
+    "NAME": "lin1",
+    "MAXTASKTIME": 0.010000000000000009
+  },
+  {
+    "ID": 19,
+    "NAME": "pc1.Port2.II",
+    "MAXTASKTIME": 0.010000000000000009
+  },
+  {
+    "ID": 20,
+    "NAME": "PC2.Port1.EI",
+    "MAXTASKTIME": 0
+  },
+  {
+    "ID": 21,
+    "NAME": "PC3.Port1.EI",
+    "MAXTASKTIME": 0
+  },
+  {
+    "ID": 22,
+    "NAME": "SW1.Port3.EI",
+    "MAXTASKTIME": 0
+  },
+  {
+    "ID": 23,
+    "NAME": "SW1.Port1",
+    "MAXTASKTIME": 0
+  },
+  {
+    "ID": 24,
+    "NAME": "SW1.Port2",
+    "MAXTASKTIME": 0
+  },
+  {
+    "ID": 25,
+    "NAME": "SW1.Port3",
+    "MAXTASKTIME": 0
+  }
+]
