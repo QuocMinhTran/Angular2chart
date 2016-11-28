@@ -214,7 +214,7 @@ var LatencyComponent = (function () {
             var dataset = new vis.DataSet(items);
             var options = {
                 dataAxis: { showMinorLabels: false },
-                legend: { left: { position: 'bottom-left' } }
+                timeAxis: { scale: 'millisecond', step: 5 }
             };
             var graph2d = new vis.Graph2d(container, dataset, groups, options);
             return graph2d;

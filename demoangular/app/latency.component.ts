@@ -220,8 +220,7 @@ export class LatencyComponent implements OnInit {
                 let dataset = new vis.DataSet(items);
                 let options = {
                     dataAxis : {showMinorLabels :false},
-                    legend: {left:{position:'bottom-left'}}
-                    
+                    timeAxis:{scale: 'millisecond',step:5}
                 };
                 let graph2d = new vis.Graph2d(container,dataset,groups,options);
                 return graph2d;
