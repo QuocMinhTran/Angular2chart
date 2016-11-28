@@ -1,0 +1,16 @@
+[
+  {
+    "ID": 1,
+    "NAME": "ti_cam",
+    "DATAFRAMENAME": "stream1",
+    "SAMPLEDFROM": "SW1.Port3.II",
+    "SAMPLEDTO": "SW1.Port1.EI"
+  },
+  {
+    "ID": 2,
+    "NAME": "ti_data1",
+    "DATAFRAMENAME": "data1",
+    "SAMPLEDFROM": "SW1.Port1.II",
+    "SAMPLEDTO": "SW1.Port2.EI"
+  }
+]

@@ -8,21 +8,20 @@ declare var google: any;
     moduleId: module.id,
     selector: 'my-dropped-frame',
     templateUrl: 'droppedframestats.html',
-    providers:[GetDataService]
+    providers: [GetDataService]
 })
 export class DroppedFrameStatsComponent implements OnInit {
     error: any;
     constructor(private getdataservice: GetDataService) { }
-    ngOnInit() {
-
+    ngOnInit() {        
         this.getdataservice.getData(links[5])
             .subscribe(res => {
                 this.getdataservice.getData(links[0]).subscribe(activesource => {
                     let labelsArray = [];
                     let dataArray = [];
                     let data = new google.visualization.DataTable();
-                    data.addColumn('string','NAME');
-                    data.addColumn('number','PERCENTAGE');
+                    data.addColumn('string', 'NAME');
+                    data.addColumn('number', 'PERCENTAGE');
                     for (let a of activesource) {
                         for (let b of res) {
                             if (a.ID == b.ACTIVERESOURCE_ID) {
@@ -32,7 +31,7 @@ export class DroppedFrameStatsComponent implements OnInit {
                             }
                         }
                     }
-                    
+
                     let options = {
                         title: 'Utilization',
                         width: 900,
@@ -44,10 +43,14 @@ export class DroppedFrameStatsComponent implements OnInit {
                             }
                         },
                         bar: { groupWidth: "90%" },
-                        vAxis :{format:'decimal'}
+                        vAxis: { format: 'decimal' },
+                        animation: {
+                            duration: 6000,
+                            easing: 'out'
+                        }
                     };
                     let chart = new google.charts.Bar(document.getElementById('top_x_div'));
-                    chart.draw(data,google.charts.Bar.convertOptions(options));
+                    chart.draw(data, google.charts.Bar.convertOptions(options));
                     // console.log(labelsArray);
                     // console.log(dataArray);                    
                 })

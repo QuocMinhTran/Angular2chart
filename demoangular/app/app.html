@@ -3,20 +3,30 @@
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainNavbar">
                 <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>                
             </button>
             <a class="navbar-brand" routerLink="">Time Critical Networks</a>
         </div>
         <div class="collapse navbar-collapse" id="mainNavbar">
             <ul class="nav navbar-nav navbar-center">
-                <li><a routerLink="/Utilization">Utilization</a></li>
-                <li><a routerLink="/Switch-Frame-Stats">Switch frame stats</a></li>
-                <li><a routerLink="/Dropped-Frame-Stats">Dropped frame stats</a></li>
-                <li><a routerLink="/Switch-Port-Memory-Utilization">Switch port memory utilization</a></li>
-                <li><a routerLink="/Active-Resource-Task">Active resource task</a></li>
+                <li>
+                    <a href='#'>Home</a>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-stats"></span> Chart <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a routerLink="/Utilization">Utilization</a></li>
+                        <li><a routerLink="/Switch-Frame-Stats">Switch frame stats</a></li>
+                        <li><a routerLink="/Dropped-Frame-Stats">Dropped frame stats</a></li>
+                        <li><a routerLink="/Switch-Port-Memory-Utilization">Switch port memory utilization</a></li>
+                        <li><a routerLink="/Active-Resource-Task">Active resource task</a></li>
+                        <li><a routerLink="/Latency">Latency</a><li>
+                    </ul>
+                    </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
             </ul>
         </div>
     </div>

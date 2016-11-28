@@ -47,7 +47,11 @@ var DroppedFrameStatsComponent = (function () {
                         }
                     },
                     bar: { groupWidth: "90%" },
-                    vAxis: { format: 'decimal' }
+                    vAxis: { format: 'decimal' },
+                    animation: {
+                        duration: 6000,
+                        easing: 'out'
+                    }
                 };
                 var chart = new google.charts.Bar(document.getElementById('top_x_div'));
                 chart.draw(data, google.charts.Bar.convertOptions(options));

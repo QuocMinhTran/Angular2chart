@@ -13,6 +13,7 @@ import { SwitchFrameStatsComponent} from './switchframestats.component';
 import { DroppedFrameStatsComponent} from './droppedframestats.component';
 import { SwitchPortMemoryUtilizationComponent} from './switchportmemoryutilization.component';
 import {ActiveResourceTaskComponent} from './activeresourcetask.component';
+import {LatencyComponent} from './latency.component';
 
 @NgModule({
     imports: [
@@ -45,6 +46,10 @@ import {ActiveResourceTaskComponent} from './activeresourcetask.component';
             {
                 path:'Active-Resource-Task',
                 component: ActiveResourceTaskComponent
+            },
+            {
+                path:'Latency',
+                component: LatencyComponent
             }
         ]),
         HttpModule,
@@ -56,7 +61,8 @@ import {ActiveResourceTaskComponent} from './activeresourcetask.component';
         SwitchFrameStatsComponent,
         SwitchPortMemoryUtilizationComponent,
         DroppedFrameStatsComponent,
-        ActiveResourceTaskComponent
+        ActiveResourceTaskComponent,
+        LatencyComponent
         ],
     bootstrap: [AppComponent]
 })

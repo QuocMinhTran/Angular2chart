@@ -13,20 +13,22 @@ var ActiveResourceTaskComponent = (function () {
     function ActiveResourceTaskComponent() {
     }
     ActiveResourceTaskComponent.prototype.ngOnInit = function () {
+        //this.destroy();
         this.nodes = new vis.DataSet([
-            { id: 1, value: 3, label: 'Thomas', shape: 'dot' },
-            { id: 2, value: 4, label: 'Tom', shape: 'square' },
+            { id: 1, value: 3, label: 'Thomas', shape: 'dot', group: 0 },
+            { id: 2, value: 4, label: 'Tom', shape: 'square', group: 1 },
         ]);
-        var newnode = { id: 3, value: 2, label: 'Minh', shape: 'diamond' };
+        var newnode = { id: 3, value: 2, label: 'Minh', shape: 'diamond', group: 1, size: 200 };
         console.log(this.nodes);
         console.log(newnode);
         this.nodes.add(newnode);
         this.nodes.update([{ id: 3, color: { background: 'white' } }]);
         this.edges = new vis.DataSet([
-            { from: 1, to: 2 },
-            { from: 2, to: 3 }
+            { id: 1, from: 1, to: 2 },
+            { id: 2, from: 2, to: 3 }
         ]);
         var options = {
+            layout: { randomSeed: 2 },
             physics: false,
             nodes: {
                 font: {
@@ -41,22 +43,69 @@ var ActiveResourceTaskComponent = (function () {
                     type: 'straightCross',
                     roundness: 0
                 }
+            },
+            manipulation: {
+                addEdge: function (data, callback) {
+                    if (data.from == data.to) {
+                        var r = confirm('Do you want to connect the node to itself?');
+                        if (r == true) {
+                            callback(data);
+                        }
+                    }
+                    else {
+                        callback(data);
+                    }
+                },
             }
         };
         var data = {
             nodes: this.nodes,
             edges: this.edges
         };
-        var timeline = new vis.Network(document.getElementById('mynetwork'), data, options);
+        this.network = new vis.Network(document.getElementById('mynetwork'), data, options);
+        this.network.on("selectNode", function (params) {
+            //let nodeInfo = JSON.stringify(params,null,4);
+            console.log(params);
+            //console.log(nodeInfo);
+            document.getElementById('node-id').value = params.nodes;
+            document.getElementById('node-label').value = '';
+            document.getElementById('node-shape').value = '';
+        });
+        this.network.on("selectEdge", function (params) {
+            //let nodeInfo = JSON.stringify(params,null,4);
+            console.log(params);
+            //console.log(nodeInfo);
+            document.getElementById('edge-id').value = params.edges;
+            document.getElementById('edge-from').value = '';
+            document.getElementById('edge-to').value = '';
+        });
+        /*function saveData(data, callback) {
+            data.id = (<HTMLInputElement>document.getElementById('node-id')).value;
+            data.label = (<HTMLInputElement>document.getElementById('node-label')).value;
+            this.clearPopUp();
+            callback(data);
+        };
+        function clearPopUp() {
+            document.getElementById('saveButton').onclick = null;
+            document.getElementById('cancelButton').onclick = null;
+            document.getElementById('network-popUp').style.display = 'none';
+        };
+        function cancelEdit(callback) {
+            this.clearPopUp();
+            callback(null);
+        }*/
     };
+    ;
     ActiveResourceTaskComponent.prototype.addNode = function () {
         try {
             var popup = document.getElementById('myPopup');
-            if (document.getElementById('node-id').value !== '') {
+            if (document.getElementById('node-id').value != '') {
                 this.nodes.add({
                     id: document.getElementById('node-id').value,
                     label: document.getElementById('node-label').value,
-                    shape: document.getElementById('node-shape').value.toLowerCase()
+                    shape: document.getElementById('node-shape').value.toLowerCase(),
+                    x: 0,
+                    y: 0
                 });
                 popup.classList.toggle('hidden');
             }

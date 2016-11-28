@@ -21,6 +21,7 @@ var switchframestats_component_1 = require('./switchframestats.component');
 var droppedframestats_component_1 = require('./droppedframestats.component');
 var switchportmemoryutilization_component_1 = require('./switchportmemoryutilization.component');
 var activeresourcetask_component_1 = require('./activeresourcetask.component');
+var latency_component_1 = require('./latency.component');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -56,6 +57,10 @@ var AppModule = (function () {
                     {
                         path: 'Active-Resource-Task',
                         component: activeresourcetask_component_1.ActiveResourceTaskComponent
+                    },
+                    {
+                        path: 'Latency',
+                        component: latency_component_1.LatencyComponent
                     }
                 ]),
                 http_1.HttpModule,
@@ -67,7 +72,8 @@ var AppModule = (function () {
                 switchframestats_component_1.SwitchFrameStatsComponent,
                 switchportmemoryutilization_component_1.SwitchPortMemoryUtilizationComponent,
                 droppedframestats_component_1.DroppedFrameStatsComponent,
-                activeresourcetask_component_1.ActiveResourceTaskComponent
+                activeresourcetask_component_1.ActiveResourceTaskComponent,
+                latency_component_1.LatencyComponent
             ],
             bootstrap: [app_component_1.AppComponent]
         }), 
