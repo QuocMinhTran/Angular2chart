@@ -22,6 +22,7 @@ var droppedframestats_component_1 = require('./droppedframestats.component');
 var switchportmemoryutilization_component_1 = require('./switchportmemoryutilization.component');
 var activeresourcetask_component_1 = require('./activeresourcetask.component');
 var latency_component_1 = require('./latency.component');
+var home_component_1 = require('./home.component');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -35,8 +36,7 @@ var AppModule = (function () {
                 router_1.RouterModule.forRoot([
                     {
                         path: '',
-                        component: utilization_component_1.UtilizationConponent,
-                        pathMatch: 'full'
+                        component: home_component_1.HomeComponent
                     },
                     {
                         path: 'Utilization',
@@ -73,7 +73,8 @@ var AppModule = (function () {
                 switchportmemoryutilization_component_1.SwitchPortMemoryUtilizationComponent,
                 droppedframestats_component_1.DroppedFrameStatsComponent,
                 activeresourcetask_component_1.ActiveResourceTaskComponent,
-                latency_component_1.LatencyComponent
+                latency_component_1.LatencyComponent,
+                home_component_1.HomeComponent
             ],
             bootstrap: [app_component_1.AppComponent]
         }), 

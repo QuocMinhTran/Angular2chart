@@ -1,7 +1,8 @@
 <h1>Latency</h1>
 <div id="latency-menu" style="border-bottom: 1px dashed black;padding-bottom:10px;" > 
+    <p> Choose your latency chart: </p>
     <select class="form-control" [(ngModel)]="selectedTimer" (ngModelChange)="onChange($event)">
-        <option *ngFor="let a of latencyTimers" [ngValue]="a" >{{a.ID}}</option>
+        <option *ngFor="let a of latencyTimers" [ngValue]="a" >Latency timer number {{a.ID}}</option>
     </select>   
 </div>
 <div id="my-latency-chart" style="height:600px;">

@@ -14,6 +14,7 @@ import { DroppedFrameStatsComponent} from './droppedframestats.component';
 import { SwitchPortMemoryUtilizationComponent} from './switchportmemoryutilization.component';
 import {ActiveResourceTaskComponent} from './activeresourcetask.component';
 import {LatencyComponent} from './latency.component';
+import {HomeComponent} from './home.component';
 
 @NgModule({
     imports: [
@@ -24,8 +25,7 @@ import {LatencyComponent} from './latency.component';
         RouterModule.forRoot([
             {
                 path:'',
-                component:UtilizationConponent,
-                pathMatch:'full'
+                component:HomeComponent                
             },
             {
                 path:'Utilization',
@@ -62,7 +62,8 @@ import {LatencyComponent} from './latency.component';
         SwitchPortMemoryUtilizationComponent,
         DroppedFrameStatsComponent,
         ActiveResourceTaskComponent,
-        LatencyComponent
+        LatencyComponent,
+        HomeComponent
         ],
     bootstrap: [AppComponent]
 })

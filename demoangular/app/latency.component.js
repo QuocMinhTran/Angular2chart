@@ -12,7 +12,9 @@ var core_1 = require('@angular/core');
 var links_1 = require('./links');
 var getdata_service_1 = require('./getdata.service');
 var LatencyComponent = (function () {
-    /*data = {
+    /* // Chartjs version
+    
+    data = {
         labels: [],
         datasets: []
     };
@@ -63,7 +65,8 @@ var LatencyComponent = (function () {
     };
     LatencyComponent.prototype.onChange = function (newObj) {
         var _this = this;
-        /*this.data = {
+        /* // Chartjs version
+        this.data = {
             labels: [],
             datasets: []
         }*/
@@ -117,7 +120,8 @@ var LatencyComponent = (function () {
             procent.forEach(function (element) {
                 procent1.push(element / max);
             });
-            /*return this.data = {
+            /* //Chartjs version
+            return this.data = {
                 labels: valueArray,
                 datasets: [{
                     type: 'bar',
@@ -137,14 +141,15 @@ var LatencyComponent = (function () {
                     pointBorderWidth: 0.3
                 }]
             }*/
-            var data = new google.visualization.DataTable();
+            /* // google chart version
+            let data = new google.visualization.DataTable();
             data.addColumn('number', 'Time');
             data.addColumn('number', 'Frames');
             data.addColumn('number', 'Percentage');
-            procent1.forEach(function (element, index) {
+            procent1.forEach((element, index) => {
                 data.addRow([valueArray[index], sumArray[index], element]);
             });
-            var options = {
+            let options = {
                 title: newObj.NAME,
                 hAxis: { title: 'second' },
                 vAxes: {
@@ -168,18 +173,20 @@ var LatencyComponent = (function () {
                 series: {
                     0: { targetAxisIndex: 0 },
                     1: { targetAxisIndex: 1, type: 'line' },
+
                 },
                 colors: ["red", "green", "orange"],
                 //chartArea: { left: 100, top: 100, width: 1000, height: 150 },
-                animation: {
+                animation:{
                     //startup:true,
-                    durationm: 2000,
-                    easing: 'in',
+                    durationm:2000,
+                    easing:'in',
                 }
             };
-            var chart = new google.visualization.ComboChart(document.getElementById('my-latency-chart'));
+            let chart = new google.visualization.ComboChart(document.getElementById('my-latency-chart'));
             chart.draw(data, options);
-            return chart;
+            return chart;*/
+            //visjs version
         }, function (err) { return _this.error = err; });
     };
     LatencyComponent = __decorate([

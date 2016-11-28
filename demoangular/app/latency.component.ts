@@ -15,7 +15,9 @@ export class LatencyComponent implements OnInit {
     selectedTimer: any;
     selectedArray = [];
 
-    /*data = {
+    /* // Chartjs version
+    
+    data = {
         labels: [],
         datasets: []
     };
@@ -63,7 +65,8 @@ export class LatencyComponent implements OnInit {
             err => this.error = err);
     }
     onChange(newObj) {
-        /*this.data = {
+        /* // Chartjs version
+        this.data = {
             labels: [],
             datasets: []
         }*/
@@ -117,7 +120,8 @@ export class LatencyComponent implements OnInit {
                 procent.forEach(element => {
                     procent1.push(element / max);
                 });
-                /*return this.data = {
+                /* //Chartjs version
+                return this.data = {
                     labels: valueArray,
                     datasets: [{
                         type: 'bar',
@@ -138,6 +142,7 @@ export class LatencyComponent implements OnInit {
                     }]
                 }*/
 
+                /* // google chart version
                 let data = new google.visualization.DataTable();
                 data.addColumn('number', 'Time');
                 data.addColumn('number', 'Frames');
@@ -181,7 +186,9 @@ export class LatencyComponent implements OnInit {
                 };
                 let chart = new google.visualization.ComboChart(document.getElementById('my-latency-chart'));
                 chart.draw(data, options);
-                return chart;
+                return chart;*/
+                
+                //visjs version
             }, err => this.error = <any>err);
     }
 }
