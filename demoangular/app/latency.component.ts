@@ -146,7 +146,7 @@ export class LatencyComponent implements OnInit {
                     data.addRow([valueArray[index], sumArray[index], element]);
                 });
                 let options = {
-                    title: 'Latency',
+                    title: newObj.NAME,
                     hAxis: { title: 'second' },
                     vAxes: {
                         0: {

@@ -145,7 +145,7 @@ var LatencyComponent = (function () {
                 data.addRow([valueArray[index], sumArray[index], element]);
             });
             var options = {
-                title: 'Latency',
+                title: newObj.NAME,
                 hAxis: { title: 'second' },
                 vAxes: {
                     0: {
