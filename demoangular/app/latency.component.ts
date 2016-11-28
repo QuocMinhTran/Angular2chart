@@ -2,7 +2,11 @@ import { Component, OnInit, OnChanges } from '@angular/core';
 import { links } from './links';
 import { GetDataService } from './getdata.service';
 
+//google needs for google chart
 declare var google: any;
+
+//vis is a variable to access to visjs library
+declare var vis :any
 @Component({
     moduleId: module.id,
     selector: 'Latency',
@@ -99,7 +103,7 @@ export class LatencyComponent implements OnInit {
                     } else {
                         sumArray.push(temp);
                         temp = 0;
-                        valueArray.push(a);
+                        valueArray.push(a*1000);
                         //procent.push(temp2);
                         a -= 0.0001;
                     }
@@ -189,6 +193,38 @@ export class LatencyComponent implements OnInit {
                 return chart;*/
                 
                 //visjs version
+                let groups = new vis.DataSet();
+                groups.add({
+                    id:0,
+                    content:'Frames',
+                    options:{
+                        style:'bar',
+                        drawPoints:{style:'circle',size:1}
+                    }
+                });
+                groups.add({
+                    id:1,
+                    content:'Percentage',
+                    options:{
+                        yAxisOrientation:'right',
+                        drawPoints:'circle'
+                    }
+                });
+                let container = document.getElementById('my-latency-chart');
+                let items = [];
+                procent1.forEach((element, index) => {
+                    items.push({x: valueArray[index], y: sumArray[index], group: 0});
+                    items.push({x: valueArray[index], y: element*100, group: 1});
+                });
+                console.log(items);
+                let dataset = new vis.DataSet(items);
+                let options = {
+                    dataAxis : {showMinorLabels :false},
+                    legend: {left:{position:'bottom-left'}}
+                    
+                };
+                let graph2d = new vis.Graph2d(container,dataset,groups,options);
+                return graph2d;
             }, err => this.error = <any>err);
     }
 }

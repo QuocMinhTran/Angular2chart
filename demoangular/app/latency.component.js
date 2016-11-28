@@ -99,7 +99,7 @@ var LatencyComponent = (function () {
                 else {
                     sumArray.push(temp);
                     temp = 0;
-                    valueArray.push(a);
+                    valueArray.push(a * 1000);
                     //procent.push(temp2);
                     a -= 0.0001;
                 }
@@ -187,6 +187,37 @@ var LatencyComponent = (function () {
             chart.draw(data, options);
             return chart;*/
             //visjs version
+            var groups = new vis.DataSet();
+            groups.add({
+                id: 0,
+                content: 'Frames',
+                options: {
+                    style: 'bar',
+                    drawPoints: { style: 'circle', size: 1 }
+                }
+            });
+            groups.add({
+                id: 1,
+                content: 'Percentage',
+                options: {
+                    yAxisOrientation: 'right',
+                    drawPoints: 'circle'
+                }
+            });
+            var container = document.getElementById('my-latency-chart');
+            var items = [];
+            procent1.forEach(function (element, index) {
+                items.push({ x: valueArray[index], y: sumArray[index], group: 0 });
+                items.push({ x: valueArray[index], y: element * 100, group: 1 });
+            });
+            console.log(items);
+            var dataset = new vis.DataSet(items);
+            var options = {
+                dataAxis: { showMinorLabels: false },
+                legend: { left: { position: 'bottom-left' } }
+            };
+            var graph2d = new vis.Graph2d(container, dataset, groups, options);
+            return graph2d;
         }, function (err) { return _this.error = err; });
     };
     LatencyComponent = __decorate([
